@@ -1,12 +1,12 @@
-appVersion: 6.2.3
-description: Elasticsearch is a distributed, RESTful search and analytics engine
-home: https://www.elastic.co/products/elasticsearch
-icon: https://info.elastic.co/rs/813-MAM-392/images/cloud-trial-style-1-icon-elasticsearch.png
-keywords:
-- elasticsearch
-- database
-- nosql
+apiVersion: v1
+appVersion: 7.17.3
+description: Official Elastic helm chart for Elasticsearch
+home: https://github.com/elastic/helm-charts
+icon: https://helm.elastic.co/icons/elasticsearch.png
 maintainers:
-- name: helmecke
+- email: helm-charts@elastic.co
+  name: Elastic
 name: elasticsearch
-version: 1.0.0
+sources:
+- https://github.com/elastic/elasticsearch
+version: 7.17.3
