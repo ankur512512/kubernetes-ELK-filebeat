@@ -62,11 +62,11 @@ healthCheckPath: "/app/kibana"
 
 # Allows you to add any config files in /usr/share/kibana/config/
 # such as kibana.yml
-kibanaConfig:
-   kibana.yml: |
-     server:
-       basePath: /kibana
-       rewriteBasePath: false
+kibanaConfig: {}
+  #  kibana.yml: |
+  #    server:
+  #      basePath: /kibana
+  #      rewriteBasePath: false
 # If Pod Security Policy in use it may be required to specify security context as well as service account
 
 podSecurityContext:
@@ -140,16 +140,12 @@ ingress:
   pathtype: ImplementationSpecific
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-    alb.ingress.kubernetes.io/ssl-passthrough: "true"
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
   # kubernetes.io/ingress.class: nginx
   # kubernetes.io/tls-acme: "true"
   hosts:
     - host: kibana.webhop.me
       paths:
         - path: /
-          pathType: Prefix
   tls:
    - secretName: letsencrypt-prod-certificate-kibana
      hosts:
