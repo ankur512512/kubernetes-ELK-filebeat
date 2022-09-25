@@ -146,10 +146,10 @@ ingress:
     - host: kibana.webhop.me
       paths:
         - path: /
-  #tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+  tls:
+   - secretName: letsencrypt-prod-certificate-kibana
+     hosts:
+       - kibana.webhop.me
 
 readinessProbe:
   failureThreshold: 3
